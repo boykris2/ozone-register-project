@@ -220,7 +220,6 @@ const AddRecord = (props) => {
   const [priceSoldInput, setPriceSoldInput] = useState("");
   const [statusInput, setStatusInput] = useState("");
   const [startDate, setStartDate] = useState(null);
-  const [disabled, setDisabled] = useState(true);
 
   let selectedModel = [];
   if (brandInput === "Apple") {
@@ -278,7 +277,18 @@ const AddRecord = (props) => {
     } else {
       return null;
     }
-  }, [errors]);
+  }, [
+    brandInput,
+    errors,
+    imeiInput,
+    modelInput,
+    priceBoughtInput,
+    priceSoldInput,
+    props,
+    sizeInput,
+    startDate,
+    statusInput,
+  ]);
 
   const clearAddRecord = () => {
     setBrandInput("");
@@ -324,7 +334,6 @@ const AddRecord = (props) => {
             }}
             DDOptions={{ width: "225px" }}
             DDItem={{ width: "224px" }}
-            disabled={false}
           />
           {errors.brand && (
             <div className={classes.errorMessage}>{errors.brand}</div>
@@ -350,7 +359,6 @@ const AddRecord = (props) => {
             }}
             DDOptions={{ width: "225px" }}
             DDItem={{ width: "214px" }}
-            disabled={disabled}
           />
           {errors.model && (
             <div className={classes.errorMessage}>{errors.model}</div>
@@ -376,7 +384,6 @@ const AddRecord = (props) => {
             }}
             DDOptions={{ width: "225px" }}
             DDItem={{ width: "214px" }}
-            disabled={disabled}
           />
           {errors.size && (
             <div className={classes.errorMessage}>{errors.size}</div>
@@ -469,7 +476,6 @@ const AddRecord = (props) => {
             }}
             DDOptions={{ width: "225px" }}
             DDItem={{ width: "214px" }}
-            disabled={false}
           />
           {errors.status && (
             <div className={classes.errorMessage}>{errors.status}</div>

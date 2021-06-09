@@ -257,7 +257,10 @@ const App = () => {
                 <div></div>
               </th>
               <th>
-                <div className={classes.Header5_Item}>
+                <div
+                  onClick={setShowCancel(true)}
+                  className={classes.Header5_Item}
+                >
                   S/N
                   <HeaderFilterSVG className={classes.HeaderFilterSVG} />
                 </div>
