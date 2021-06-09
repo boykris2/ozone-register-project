@@ -1,0 +1,127 @@
+.horLine {
+  border-top: 1px solid #e8e8e9;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.Header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 42px;
+  letter-spacing: 0.05em;
+
+  color: #000000;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.Text1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  font-feature-settings: "cpsp" on;
+
+  color: #000000;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.Text2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+
+.DDInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 13px;
+}
+
+.imeiInput,
+.dateInput {
+  width: 225px;
+  height: 32px;
+  background: #e7eaea;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding-left: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.imeiInput::placeholder,
+.dateInput::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.imeiInput:focus,
+.dateInput:focus {
+  border: 1px solid #34dba1;
+  outline-style: none;
+}
+
+.Section1 {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+.addButton button {
+  border: 1px solid #069d72;
+  background: #34dba1;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 2px 10px;
+}
+
+.addButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.errorMessage {
+  font-size: 12px;
+  padding-top: 2px;
+  color: #dc3544;
+}

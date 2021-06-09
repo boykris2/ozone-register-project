@@ -1,0 +1,634 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.Sidebar {
+  height: 100vh;
+  width: 3vw;
+  background-color: #1c212d;
+  margin: auto;
+}
+
+.Header {
+  width: 97vw;
+  height: 23%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f9;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.Header1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 33%;
+}
+
+.Header1Left {
+  display: flex;
+  align-items: center;
+
+  width: 50%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28.8px;
+  line-height: 42px;
+
+  box-sizing: border-box;
+  margin-left: 2.5%;
+  margin-top: 1.5%;
+}
+
+.Header1Right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2.5%;
+  margin-top: 1%;
+
+  width: 50%;
+  height: 10%;
+}
+
+.NairaSVG {
+  height: 7%;
+  width: 7%;
+  margin-left: 1.5%;
+}
+
+.PrintSVG {
+  margin-right: 5%;
+  width: 15%;
+  height: 15%;
+}
+
+.AddSVG {
+  margin-right: 5%;
+  width: 15%;
+  height: 15%;
+}
+
+.PrintButton {
+  margin-right: 2%;
+  padding: 0.5% 1% 0.5% 1%;
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e8e8e9;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+  color: #6b7280;
+  display: flex;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.AddButton {
+  justify-content: center;
+  align-items: center;
+  padding: 0.5% 1% 0.5% 1%;
+  width: 20%;
+  height: 100%;
+  border: 1px solid #069d72;
+  background: #34dba1;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+  color: #ffffff;
+  display: flex;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.horLine {
+  border-top: 1px solid #e8e8e9;
+  width: 95%;
+  margin-left: 0.2%;
+}
+
+.verLine {
+  border-left: 1px solid rgba(0, 0, 0, 0.28);
+  height: 27px;
+  margin-right: 0.7%;
+  margin-top: 0.4%;
+}
+.verLine2 {
+  border-left: 1px solid rgba(0, 0, 0, 0.28);
+  height: 23px;
+  margin-right: 0.7%;
+  margin-left: 0.7%;
+}
+
+.Header2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 33%;
+  /* margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 5%; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.SearchInput {
+  background: #ffffff;
+  border: 1px solid #e7eaea;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(231, 234, 234, 0.25);
+  border-radius: 10px;
+
+  width: 245px;
+  height: 35.2px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 0.7%;
+  margin-left: 2.5%;
+}
+
+.SearchInput input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+
+  outline: none;
+  margin-left: 2%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.SearchInput input::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.PhoneSVG {
+  margin-left: 3%;
+  width: 5%;
+  height: 50%;
+}
+
+.SearchSVG {
+  margin-left: 2%;
+  width: 8%;
+  height: 50%;
+}
+
+.DateInput {
+  background: #ffffff;
+  border: 1px solid #e7eaea;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(231, 234, 234, 0.25);
+  border-radius: 10px;
+
+  width: 247px;
+  height: 35.2px;
+
+  align-items: center;
+  margin-right: 2%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.DateInput input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+
+  outline: none;
+  margin-left: 1.2%;
+  width: 195px;
+  text-align: center;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.DatePicker::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.DateSVG {
+  margin-left: 2%;
+  width: 7%;
+  height: 50%;
+}
+
+.DropdownSVG {
+  margin-right: 3%;
+  width: 5%;
+  height: 25%;
+}
+
+.PriceSVG,
+.FilterSVG {
+  margin-left: 2%;
+  width: 7%;
+  height: 50%;
+}
+
+.AllSVG {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 7px;
+  width: 15%;
+  height: 30%;
+}
+
+.InStockSVG {
+  margin-left: 0%;
+  margin-bottom: 0%;
+  padding-bottom: 1%;
+  margin-right: 7px;
+  width: 20px;
+  height: 20px;
+}
+.SoldSVG {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.PriceInput {
+  background: #ffffff;
+  border: 1px solid #e7eaea;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(231, 234, 234, 0.25);
+  border-radius: 10px;
+
+  width: 247px;
+  height: 35.2px;
+
+  align-items: center;
+  margin-right: 0.7%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.PriceInput span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+.FilterInput span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.35);
+}
+.FilterInput {
+  background: #ffffff;
+  border: 1px solid #e7eaea;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(231, 234, 234, 0.25);
+  border-radius: 10px;
+
+  width: 247px;
+  height: 35.2px;
+
+  align-items: center;
+  margin-right: 0.7%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Header3 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1%;
+  /* margin-left: 5%; */
+}
+
+.Header3_1,
+.Header3_2,
+.Header3_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid #34dba1; */
+  border: 3px solid #f8f8f9;
+  margin-right: 2%;
+
+  padding: 0% 0.2% 0.6% 0.2%;
+  margin-left: 1%;
+  width: 110px;
+  height: 100%;
+  box-sizing: border-box;
+
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  /* border-bottom-style: hidden; */
+}
+
+.Header3_1 {
+  margin-left: 3%;
+}
+
+.Header3_2 {
+  width: 120px;
+}
+
+.Header3_Item {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 21px;
+  /* identical to box height */
+
+  letter-spacing: 0.075em;
+
+  color: #6b7280;
+}
+
+.Header3_1:hover,
+.Header3_2:hover,
+.Header3_3:hover {
+  border-bottom-style: solid;
+  box-sizing: border-box;
+  border: 3px solid #34dba1;
+
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+}
+
+.Header3_Counter {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  /*identicaltoboxheight*/
+  letter-spacing: 0.075em;
+  color: #6b7280;
+  border: 1px solid black;
+  background-color: rgba(196, 196, 196, 0.3);
+  margin-left: 15%;
+  border-radius: 30%;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  -webkit-border-radius: 30%;
+  -moz-border-radius: 30%;
+  -ms-border-radius: 30%;
+  -o-border-radius: 30%;
+
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer {
+  background-color: #f8f8f9;
+  width: 97%;
+  height: 7%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.LessThanSVG {
+  margin-right: 6%;
+  margin-left: 1%;
+  height: 22%;
+
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+}
+
+.GreatThanSVG {
+  margin-right: 1%;
+  height: 22%;
+}
+
+.Text1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #6b7280;
+}
+.Text2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 21px;
+
+  border: 1px solid rgba(196, 196, 196, 0.7);
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Text3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.Text4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  /* identical to box height */
+  margin-left: 5px;
+  color: #000000;
+}
+
+.Header4 {
+  background-color: #ffffff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header4_Text1,
+.Header4_Text2 {
+  padding-left: 3.7%;
+  padding-top: 1%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header4_Text2 {
+  padding-right: 8%;
+}
+
+.HeaderFilterSVG {
+  margin-left: 5px;
+}
+
+.Header5 {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.Header5_Item {
+  display: flex;
+  align-items: center;
+  margin: 4% 0%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr th {
+  background-color: #f8f8f9;
+}
+
+tr {
+  background-color: #ffffff;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+  width: 33px;
+  text-align: center;
+  visibility: visible;
+  padding-top: 8px;
+}
+
+td {
+  text-align: left;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+  padding-left: 0.4%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: rgba(0, 0, 0, 0.5);
+  height: 50px;
+  box-sizing: border-box;
+  max-width: 140px;
+}
+
+th {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #6b7280;
+
+  padding: 8px;
+  text-align: left;
+  padding-left: 0.4%;
+  max-width: 70px;
+}
+
+tr:hover {
+  background-color: #9da7a2;
+}
+
+.CancelSVG {
+  width: 16px;
+  height: 16px;
+}
