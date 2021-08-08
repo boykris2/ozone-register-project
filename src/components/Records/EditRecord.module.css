@@ -95,7 +95,8 @@
   flex-wrap: wrap;
 }
 
-.addButton button {
+.editButton button,
+.cancelButton button {
   border: 1px solid #069d72;
   background: #34dba1;
   border-radius: 5px;
@@ -114,15 +115,32 @@
   cursor: pointer;
 }
 
-.addButton {
+.cancelButton button {
+  background-color: rgba(255, 0, 0, 0.644);
+  border: 1px solid #9d0606;
+}
+
+.editButton {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin-left: 3%;
+}
+.cancelButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 3%;
 }
 
 .errorMessage {
   font-size: 12px;
   padding-top: 2px;
   color: #dc3544;
+}
+
+.bottomButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
 }

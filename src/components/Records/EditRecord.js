@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import classes from "./AddRecord.module.css";
+import React, { useEffect } from "react";
+import classes from "./EditRecord.module.css";
 import Dropdown from "../Dropdown/Dropdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -235,50 +235,49 @@ const status = {
   label: "Select item status",
 };
 
-const AddRecord = (props) => {
+const EditRecord = (props) => {
   const { validate, errors } = useForm();
-  const [brandInput, setBrandInput] = useState("");
-  const [modelInput, setModelInput] = useState("");
-  const [sizeInput, setSizeInput] = useState("");
-  const [imeiInput, setImeiInput] = useState("");
-  const [priceBoughtInput, setPriceBoughtInput] = useState("");
-  const [priceSoldInput, setPriceSoldInput] = useState("");
-  const [statusInput, setStatusInput] = useState("");
-  const [startDate, setStartDate] = useState(null);
 
   let selectedModel = [];
-  if (brandInput === "Apple") {
+  if (props.brand === "Apple") {
     selectedModel = model.apple.apple_model_options;
   }
-  if (brandInput === "Samsung") {
+  if (props.brand === "Samsung") {
     selectedModel = model.samsung.samsung_model_options;
   }
-  if (brandInput === "OnePlus") {
+  if (props.brand === "OnePlus") {
     selectedModel = model.oneplus.oneplus_model_options;
   }
-  if (brandInput === "Google") {
+  if (props.brand === "Google") {
     selectedModel = model.google.google_model_options;
   }
-  if (brandInput === "HTC") {
+  if (props.brand === "HTC") {
     selectedModel = model.htc.htc_model_options;
   }
-  // if (!brandInput) {
-  //   setDisabled(true);
-  // }
-  // if (!modelInput) {
-  //   setDisabled(true);
-  // }
+
+  console.log(props);
+
+  const clearUpdateRecord = () => {
+    props.setBrand("");
+    props.setImei("");
+    props.setModel("");
+    props.setSize("");
+    props.setPriceBought("");
+    props.setPriceSold("");
+    props.setStatus("");
+    props.setDate("");
+  };
 
   const submitHandler = (event) => {
     let combData = {
-      brand: brandInput,
-      model: modelInput,
-      size: sizeInput,
-      imei: imeiInput,
-      priceBought: priceBoughtInput,
-      priceSold: priceSoldInput,
-      status: statusInput,
-      date: startDate,
+      brand: props.brand,
+      model: props.model,
+      size: props.size,
+      imei: props.imei,
+      priceBought: props.priceBought,
+      priceSold: props.priceSold,
+      status: props.status,
+      date: props.date,
     };
     validate(combData);
     console.log(errors);
@@ -286,42 +285,31 @@ const AddRecord = (props) => {
 
   useEffect(() => {
     if (props.BDClick === false) {
-      clearAddRecord();
+      clearUpdateRecord();
     }
     if (Object.getOwnPropertyNames(errors).length === 0) {
-      props.addRecordHandler({
-        brand: brandInput,
-        model: modelInput,
-        size: sizeInput,
-        imei: imeiInput,
-        priceBought: priceBoughtInput,
-        priceSold: priceSoldInput,
-        status: statusInput,
-        date: startDate.toLocaleDateString(),
-        date_raw: startDate.toISOString(),
+      props.updateRecordHandler({
+        brand: props.brand,
+        model: props.model,
+        size: props.size,
+        imei: props.imei,
+        priceBought: props.priceBought,
+        priceSold: props.priceSold,
+        status: props.status,
+        date: props.date.toLocaleDateString(),
+        date_raw: props.date.toISOString(),
       });
 
       props.close();
-      clearAddRecord();
+      clearUpdateRecord();
     } else {
       return null;
     }
   }, [errors]);
 
-  const clearAddRecord = () => {
-    setBrandInput("");
-    setImeiInput("");
-    setModelInput("");
-    setSizeInput("");
-    setPriceBoughtInput("");
-    setPriceSoldInput("");
-    setStatusInput("");
-    setStartDate("");
-  };
-
   return (
     <div>
-      <div className={classes.Header}>Add New Item</div>
+      <div className={classes.Header}>Edit Item</div>
 
       {/* <br></br> */}
       <div className={classes.Text1}>1. Item Details</div>
@@ -332,15 +320,14 @@ const AddRecord = (props) => {
             Brand
           </label>
           <Dropdown
-            value={brandInput}
+            value={props.brand}
             options={brand.brand_options}
             icon={brand.logo}
             label={brand.label}
             onChange={(v) => {
-              setBrandInput(v);
-              setModelInput("");
-              setSizeInput("");
-              setImeiInput("");
+              props.setBrand(v);
+              props.setModel("");
+              props.setSize("");
             }}
             DDSvg={{ width: "5%", height: "25%", marginRight: "3%" }}
             DDInput={{
@@ -362,11 +349,11 @@ const AddRecord = (props) => {
             Model
           </label>
           <Dropdown
-            value={modelInput}
+            value={props.model}
             options={selectedModel}
             // icon={model.logo}
             label={model.apple.label}
-            onChange={(v) => setModelInput(v)}
+            onChange={(v) => props.setModel(v)}
             DDSvg={{ width: "5%", height: "25%", marginRight: "3%" }}
             DDInput={{
               height: "32px",
@@ -387,11 +374,11 @@ const AddRecord = (props) => {
             Size
           </label>
           <Dropdown
-            value={sizeInput}
+            value={props.size}
             options={size.size_options}
             // icon={size.logo}
             label={size.label}
-            onChange={(v) => setSizeInput(v)}
+            onChange={(v) => props.setSize(v)}
             DDSvg={{ width: "5%", height: "25%", marginRight: "3%" }}
             DDInput={{
               height: "32px",
@@ -415,13 +402,12 @@ const AddRecord = (props) => {
             type="number"
             id="IMEI"
             className={classes.imeiInput}
-            value={imeiInput}
-            placeholder={"IMEI"}
+            value={props.imei}
             style={{
               border: errors.imei ? "1px solid #dc3544" : "",
             }}
             onChange={(e) => {
-              setImeiInput(e.target.value);
+              props.setImei(e.target.value);
             }}
           />
           {errors.imei && (
@@ -443,10 +429,9 @@ const AddRecord = (props) => {
             style={{
               border: errors.priceBought ? "1px solid #dc3544" : "",
             }}
-            value={priceBoughtInput}
-            placeholder={"Input buy price of Item"}
+            value={props.priceBought}
             onChange={(e) => {
-              setPriceBoughtInput(e.target.value);
+              props.setPriceBought(e.target.value);
             }}
           />
           {errors.priceBought && (
@@ -464,10 +449,9 @@ const AddRecord = (props) => {
             style={{
               border: errors.priceSold ? "1px solid #dc3544" : "",
             }}
-            value={priceSoldInput}
-            placeholder={"Input sold price of Item"}
+            value={props.priceSold}
             onChange={(e) => {
-              setPriceSoldInput(e.target.value);
+              props.setPriceSold(e.target.value);
             }}
           />
           {errors.priceSold && (
@@ -479,11 +463,11 @@ const AddRecord = (props) => {
             Status
           </label>
           <Dropdown
-            value={statusInput}
+            value={props.status}
             options={status.status_options}
             // icon={size.logo}
             label={status.label}
-            onChange={(v) => setStatusInput(v)}
+            onChange={(v) => props.setStatus(v)}
             DDSvg={{ width: "5%", height: "25%", marginRight: "3%" }}
             DDInput={{
               height: "32px",
@@ -505,8 +489,8 @@ const AddRecord = (props) => {
           </label>
           <DatePicker
             className={classes.dateInput}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            selected={props.date}
+            onChange={(date) => props.setDate(date)}
             todayButton="Today"
             dateFormat="dd/MM/yyyy"
             showPopperArrow={false}
@@ -535,11 +519,23 @@ const AddRecord = (props) => {
           )}
         </div>
       </div>
-      <div className={classes.addButton}>
-        <button onClick={submitHandler}>ADD RECORD</button>
+      <div className={classes.bottomButtons}>
+        <div className={classes.cancelButton}>
+          <button
+            onClick={() => {
+              props.deleteRecordHandler(props.id);
+              props.close();
+            }}
+          >
+            DELETE RECORD
+          </button>
+        </div>
+        <div className={classes.editButton}>
+          <button onClick={submitHandler}>EDIT RECORD</button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default AddRecord;
+export default EditRecord;

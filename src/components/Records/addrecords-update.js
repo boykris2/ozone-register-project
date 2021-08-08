@@ -165,31 +165,6 @@ const model = {
     ],
     label: "Select a Model",
   },
-  samsung: {
-    samsung_model_options: [
-      {
-        id: 0,
-        label: "Galaxy S21 Ultra",
-      },
-      {
-        id: 1,
-        label: "Galaxy S21",
-      },
-      {
-        id: 2,
-        label: "Galaxy Note 20 Ultra",
-      },
-      {
-        id: 3,
-        label: "Galaxy Note 20",
-      },
-      {
-        id: 4,
-        label: "Galaxy S21 Plus",
-      },
-    ],
-    label: "Select a Model",
-  },
 };
 
 const size = {
@@ -285,9 +260,6 @@ const AddRecord = (props) => {
   };
 
   useEffect(() => {
-    if (props.BDClick === false) {
-      clearAddRecord();
-    }
     if (Object.getOwnPropertyNames(errors).length === 0) {
       props.addRecordHandler({
         brand: brandInput,
@@ -298,7 +270,6 @@ const AddRecord = (props) => {
         priceSold: priceSoldInput,
         status: statusInput,
         date: startDate.toLocaleDateString(),
-        date_raw: startDate.toISOString(),
       });
 
       props.close();
@@ -306,7 +277,18 @@ const AddRecord = (props) => {
     } else {
       return null;
     }
-  }, [errors]);
+  }, [
+    brandInput,
+    errors,
+    imeiInput,
+    modelInput,
+    priceBoughtInput,
+    priceSoldInput,
+    props,
+    sizeInput,
+    startDate,
+    statusInput,
+  ]);
 
   const clearAddRecord = () => {
     setBrandInput("");

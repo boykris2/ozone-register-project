@@ -16,6 +16,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.dd_input_click {
+  border: 1px solid #34dba1;
 }
 
 .dd_item {

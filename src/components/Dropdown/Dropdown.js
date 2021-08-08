@@ -35,7 +35,11 @@ const Dropdown = (props) => {
     <div ref={dropdownRef} className={classes.dd_container}>
       <div
         style={props.DDInput}
-        className={classes.dd_input}
+        className={classNames(
+          classes.dd_input,
+          isActive && classes.dd_input_click
+        )}
+        // className={classes.dd_input}
         onClick={() => setIsActive(!isActive)}
       >
         {props.icon}
@@ -58,7 +62,6 @@ const Dropdown = (props) => {
         {props.options.map((item) => (
           <div
             key={item.id}
-            // onClick={() => applyChanges(item.label)}
             onClick={() => {
               props.onChange(item.label);
               setIsActive(!isActive);
